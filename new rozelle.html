@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozzelle Ideas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff1e6;
+            color: #333;
+        }
+
+        header {
+            background-color: #13d62a;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4b4b;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #13d62a, #ffb38a);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .products {
+            padding: 40px 7%;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+            color: #13d62a;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background-color: white;
+            border: 3px solid #ffb38a;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            border-color: #e63946;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+            color: #13d62a;
+        }
+
+        .price {
+            color: #e63946;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #13d62a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #13d62a;
+        }
+
+        .cart {
+            background-color: #ffb38a;
+            margin: 20px 7% 40px;
+            padding: 25px;
+            border-radius: 12px;
+            border: 3px solid #13d62a;
+        }
+
+        .cart h2 {
+            margin-bottom: 15px;
+            color: #13d62a;
+        }
+
+        .cart-item {
+            padding: 10px 0;
+            border-bottom: 1px solid white;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #33d9e8;
+        }
+
+        footer {
+            background-color: #ffb38a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌺Rozzelle Ideas</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart 🛒</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Welcome to Rozzelle Ideas</h2>
+        <p>Quality Peanut Butter & Coconut Oil for You</p>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+            <div class="product">
+                <img src="https://via.placeholder.com/400x250?text=Peanut+Butter+1"
+                     alt="Peanut Butter 300g">
+                <h3>Peanut Butter 300g</h3>
+                <p class="price">₵20.00</p>
+                <button onclick="addToCart('Peanut Butter 300g', 20)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/400x250?text=Peanut+Butter+2"
+                     alt="Peanut Butter 650g">
+                <h3>Peanut Butter 650g</h3>
+                <p class="price">₵40.00</p>
+                <button onclick="addToCart('Peanut Butter 650g', 40)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/400x250?text=Peanut+Butter+3"
+                     alt="Peanut Butter 1kg">
+                <h3>Peanut Butter 1kg</h3>
+                <p class="price">₵70.00</p>
+                <button onclick="addToCart('Peanut Butter 1kg', 70)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/400x250?text=Peanut+Butter+4"
+                     alt="Peanut Butter 4.65kg">
+                <h3>Peanut Butter 4.65kg</h3>
+                <p class="price">₵200.00</p>
+                <button onclick="addToCart('Peanut Butter 4.65kg', 200)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/400x250?text=Coconut+Oil+1"
+                     alt="Coconut Oil 1 litre">
+                <h3>Coconut Oil 1 litre</h3>
+                <p class="price">₵90.00</p>
+                <button onclick="addToCart('Coconut Oil 1 litre', 90)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/400x250?text=Coconut+Oil+2"
+                     alt="Coconut Oil 5 litres">
+                <h3>Coconut Oil 5 litres</h3>
+                <p class="price">₵400.00</p>
+                <button onclick="addToCart('Coconut Oil 5 litres', 400)">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cart" id="cart">
+        <h2>Shopping Cart 🛒</h2>
+
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+        <p class="total">
+            Total: ₵<span id="total">0</span>
+        </p>
+
+        <br>
+
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rozzelle Ideas. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(product, price) {
+            cart.push({
+                name: product,
+                price: price
+            });
+
+            total += price;
+            displayCart();
+
+            alert(product + " has been added to your cart!");
+        }
+
+        function displayCart() {
+            const cartItems = document.getElementById("cart-items");
+            const totalDisplay = document.getElementById("total");
+
+            cartItems.innerHTML = "";
+
+            cart.forEach(function(item, index) {
+                const div = document.createElement("div");
+
+                div.className = "cart-item";
+
+                div.innerHTML =
+                    item.name +
+                    " - ₵" +
+                    item.price +
+                    " <button onclick='removeFromCart(" +
+                    index +
+                    ")'>Remove</button>";
+
+                cartItems.appendChild(div);
+            });
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = "<p>Your cart is empty.</p>";
+            }
+
+            totalDisplay.textContent = total;
+        }
+
+        function removeFromCart(index) {
+            total -= cart[index].price;
+            cart.splice(index, 1);
+            displayCart();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert(
+                    "Thank you for shopping at Rozzelle Ideas! " +
+                    "Your total is ₵" + total
+                );
+            }
+        }
+    </script>
+
+</body>
+</html>
